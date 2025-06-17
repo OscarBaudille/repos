@@ -1,19 +1,24 @@
-@using pepe4mvc.Models
-
 @model pepe4mvc.Models.ContactForm
 
-<h2>Contact Us</h2>
-<form asp-action="Submit" method="post">
-    <label>Name:</label>
-    <input asp-for="Name" required />
-    <label>Email:</label>
-    <input asp-for="Email" type="email" required />
-    <label>Message:</label>
-    <textarea asp-for="Message"></textarea>
-    <button type="submit">Send</button>
-</form>
-
-@if (ViewData["Success"] != null)
-{
-    <p>@ViewData["Success"]</p>
-}
+<h2 class="text-center">Contact Us Now</h2>
+<div class="container mt-4">
+    <form asp-action="Submit" method="post" class="p-4 border rounded shadow">
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input asp-for="Name" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email:</label>
+            <input asp-for="Email" type="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Message:</label>
+            <textarea asp-for="Message" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    @if (ViewData["Success"] != null)
+    {
+        <p class="alert alert-success mt-3">@ViewData["Success"]</p>
+    }
+</div>
